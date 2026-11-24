@@ -4,6 +4,7 @@ import atexit
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import gc
 import multiprocessing as mp
+import os
 from pathlib import Path
 import random
 import warnings
@@ -13,6 +14,7 @@ _DEVICE = None
 
 
 def _initialize_worker(device_queue):
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     import torch
 
     global _DEVICE
@@ -25,16 +27,22 @@ def _initialize_worker(device_queue):
 def train_model(model, loader, client_id, epochs=1, device="cuda", *,
                 checkpoint_dir, checkpoint_prefix, seed=None):
     """Use the notebook's AdamW/AMP training for both clients and the baseline."""
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
     import numpy as np
     import torch
     from torch.nn.functional import cross_entropy
     from torch.optim import AdamW
     from tqdm import tqdm
 
+    torch.use_deterministic_algorithms(True)
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
     if seed is not None:
         random.seed(seed)
         np.random.seed(seed % (2 ** 32))
         torch.manual_seed(seed)
+        if loader.generator is not None:
+            loader.generator.manual_seed(seed)
     model.to(device)
     opt = AdamW(model.parameters(), lr=3e-4)
     scaler = torch.amp.GradScaler("cuda")
