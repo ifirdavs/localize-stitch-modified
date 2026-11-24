@@ -13,3 +13,5 @@ where accuracy is a fraction between 0 and 1.
    Is it okay that, in terms of LaS, the reference becomes the previous stitched global model?
 
 3. Can this whole work be viable for a bachelor thesis?
+
+4. Optional (won't implement): Consider using sparse masks instead of dense masks to reduce the transmission or file size in communication rounds.
