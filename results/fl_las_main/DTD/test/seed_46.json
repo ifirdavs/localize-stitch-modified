@@ -1,0 +1,47 @@
+{
+  "split": "test",
+  "config": {
+    "dataset": "DTD",
+    "backbone": "vit_small_patch16_224",
+    "num_clients": 5,
+    "alpha": 0.1,
+    "batch_size": 64,
+    "rounds": 15,
+    "central_epochs": 15,
+    "split_sizes": [
+      1880,
+      1880,
+      1880
+    ],
+    "dtd_partition": 1,
+    "preprocess": "Compose(\n    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)",
+    "fedadam": [
+      0.01,
+      0.9,
+      0.99,
+      0.001
+    ]
+  },
+  "results": [
+    {
+      "Seed": 46,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.7191489361702128
+    },
+    {
+      "Seed": 46,
+      "Method": "FedAvg",
+      "Accuracy": 0.7138297872340426
+    },
+    {
+      "Seed": 46,
+      "Method": "FedAdam",
+      "Accuracy": 0.6436170212765957
+    },
+    {
+      "Seed": 46,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.7329787234042553
+    }
+  ]
+}

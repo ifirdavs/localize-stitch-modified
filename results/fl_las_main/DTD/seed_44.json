@@ -1,0 +1,386 @@
+{
+  "config": {
+    "dataset": "DTD",
+    "backbone": "vit_small_patch16_224",
+    "num_clients": 5,
+    "alpha": 0.1,
+    "batch_size": 64,
+    "rounds": 15,
+    "central_epochs": 15,
+    "split_sizes": [
+      1880,
+      1880,
+      1880
+    ],
+    "dtd_partition": 1,
+    "preprocess": "Compose(\n    Resize(size=(224, 224), interpolation=bilinear, max_size=None, antialias=True)\n    ToTensor()\n    Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))\n)",
+    "fedadam": [
+      0.01,
+      0.9,
+      0.99,
+      0.001
+    ]
+  },
+  "results": [
+    {
+      "Round": 1,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.3547872340425532,
+      "Seed": 44
+    },
+    {
+      "Round": 2,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.5531914893617021,
+      "Seed": 44
+    },
+    {
+      "Round": 3,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6148936170212767,
+      "Seed": 44
+    },
+    {
+      "Round": 4,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6590425531914894,
+      "Seed": 44
+    },
+    {
+      "Round": 5,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6664893617021277,
+      "Seed": 44
+    },
+    {
+      "Round": 6,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6877659574468085,
+      "Seed": 44
+    },
+    {
+      "Round": 7,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6675531914893617,
+      "Seed": 44
+    },
+    {
+      "Round": 8,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6813829787234043,
+      "Seed": 44
+    },
+    {
+      "Round": 9,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6952127659574469,
+      "Seed": 44
+    },
+    {
+      "Round": 10,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6920212765957446,
+      "Seed": 44
+    },
+    {
+      "Round": 11,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.7154255319148937,
+      "Seed": 44
+    },
+    {
+      "Round": 12,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.7042553191489361,
+      "Seed": 44
+    },
+    {
+      "Round": 13,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.7106382978723405,
+      "Seed": 44
+    },
+    {
+      "Round": 14,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6787234042553192,
+      "Seed": 44
+    },
+    {
+      "Round": 15,
+      "Method": "Adaptive FedLaS",
+      "Accuracy": 0.6941489361702128,
+      "Seed": 44
+    },
+    {
+      "Round": 1,
+      "Method": "FedAvg",
+      "Accuracy": 0.35106382978723405,
+      "Seed": 44
+    },
+    {
+      "Round": 2,
+      "Method": "FedAvg",
+      "Accuracy": 0.524468085106383,
+      "Seed": 44
+    },
+    {
+      "Round": 3,
+      "Method": "FedAvg",
+      "Accuracy": 0.5920212765957447,
+      "Seed": 44
+    },
+    {
+      "Round": 4,
+      "Method": "FedAvg",
+      "Accuracy": 0.622872340425532,
+      "Seed": 44
+    },
+    {
+      "Round": 5,
+      "Method": "FedAvg",
+      "Accuracy": 0.6547872340425532,
+      "Seed": 44
+    },
+    {
+      "Round": 6,
+      "Method": "FedAvg",
+      "Accuracy": 0.6590425531914894,
+      "Seed": 44
+    },
+    {
+      "Round": 7,
+      "Method": "FedAvg",
+      "Accuracy": 0.6468085106382979,
+      "Seed": 44
+    },
+    {
+      "Round": 8,
+      "Method": "FedAvg",
+      "Accuracy": 0.6590425531914894,
+      "Seed": 44
+    },
+    {
+      "Round": 9,
+      "Method": "FedAvg",
+      "Accuracy": 0.6702127659574468,
+      "Seed": 44
+    },
+    {
+      "Round": 10,
+      "Method": "FedAvg",
+      "Accuracy": 0.6861702127659575,
+      "Seed": 44
+    },
+    {
+      "Round": 11,
+      "Method": "FedAvg",
+      "Accuracy": 0.6978723404255319,
+      "Seed": 44
+    },
+    {
+      "Round": 12,
+      "Method": "FedAvg",
+      "Accuracy": 0.6808510638297872,
+      "Seed": 44
+    },
+    {
+      "Round": 13,
+      "Method": "FedAvg",
+      "Accuracy": 0.6946808510638298,
+      "Seed": 44
+    },
+    {
+      "Round": 14,
+      "Method": "FedAvg",
+      "Accuracy": 0.6872340425531915,
+      "Seed": 44
+    },
+    {
+      "Round": 15,
+      "Method": "FedAvg",
+      "Accuracy": 0.6968085106382979,
+      "Seed": 44
+    },
+    {
+      "Round": 1,
+      "Method": "FedAdam",
+      "Accuracy": 0.1930851063829787,
+      "Seed": 44
+    },
+    {
+      "Round": 2,
+      "Method": "FedAdam",
+      "Accuracy": 0.45851063829787236,
+      "Seed": 44
+    },
+    {
+      "Round": 3,
+      "Method": "FedAdam",
+      "Accuracy": 0.5462765957446809,
+      "Seed": 44
+    },
+    {
+      "Round": 4,
+      "Method": "FedAdam",
+      "Accuracy": 0.575531914893617,
+      "Seed": 44
+    },
+    {
+      "Round": 5,
+      "Method": "FedAdam",
+      "Accuracy": 0.6234042553191489,
+      "Seed": 44
+    },
+    {
+      "Round": 6,
+      "Method": "FedAdam",
+      "Accuracy": 0.6579787234042553,
+      "Seed": 44
+    },
+    {
+      "Round": 7,
+      "Method": "FedAdam",
+      "Accuracy": 0.6675531914893617,
+      "Seed": 44
+    },
+    {
+      "Round": 8,
+      "Method": "FedAdam",
+      "Accuracy": 0.6659574468085107,
+      "Seed": 44
+    },
+    {
+      "Round": 9,
+      "Method": "FedAdam",
+      "Accuracy": 0.6638297872340425,
+      "Seed": 44
+    },
+    {
+      "Round": 10,
+      "Method": "FedAdam",
+      "Accuracy": 0.6553191489361702,
+      "Seed": 44
+    },
+    {
+      "Round": 11,
+      "Method": "FedAdam",
+      "Accuracy": 0.6446808510638298,
+      "Seed": 44
+    },
+    {
+      "Round": 12,
+      "Method": "FedAdam",
+      "Accuracy": 0.6436170212765957,
+      "Seed": 44
+    },
+    {
+      "Round": 13,
+      "Method": "FedAdam",
+      "Accuracy": 0.6372340425531915,
+      "Seed": 44
+    },
+    {
+      "Round": 14,
+      "Method": "FedAdam",
+      "Accuracy": 0.6212765957446809,
+      "Seed": 44
+    },
+    {
+      "Round": 15,
+      "Method": "FedAdam",
+      "Accuracy": 0.6276595744680851,
+      "Seed": 44
+    },
+    {
+      "Round": 1,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 2,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 3,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 4,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 5,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 6,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 7,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 8,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 9,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 10,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 11,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 12,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 13,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 14,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    },
+    {
+      "Round": 15,
+      "Method": "Centralized baseline",
+      "Accuracy": 0.6335106382978724,
+      "Seed": 44
+    }
+  ]
+}
